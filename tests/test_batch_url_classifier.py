@@ -8,7 +8,7 @@ class TestBatchURLClassifier(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.mini_data_dir = "mini_batches"  # unzip if needed to 'mini_batches'
+        cls.mini_data_dir = "data"  # unzip if needed to 'data'
         cls.classifier = BatchURLClassifier(data_dir=cls.mini_data_dir, batch_size=2)
 
     def test_max_features_positive_int(self):
