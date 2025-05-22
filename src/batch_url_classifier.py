@@ -1,3 +1,29 @@
+# Import all required libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_svmlight_file
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
+from sklearn.feature_selection import SelectKBest, mutual_info_classif
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import LinearSVC
+import lightgbm as lgb
+import xgboost as xgb
+from imblearn.over_sampling import SMOTE
+from datetime import datetime
+import os
+from tqdm import tqdm
+from scipy.sparse import csr_matrix, hstack, vstack
+from sklearn.linear_model import RidgeClassifier, PassiveAggressiveClassifier
+from sklearn.naive_bayes import MultinomialNB
+from google.colab import files
+import traceback
+import gc  # Make sure gc is imported
+
+
 class BatchURLClassifier:
     def __init__(self, data_dir="url_svmlight", batch_size=30):
         self.data_dir = data_dir
