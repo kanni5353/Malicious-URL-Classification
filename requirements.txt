@@ -5,6 +5,7 @@ matplotlib
 numpy
 scipy
 pandas
+seaborn
 
 # Logging and progress
 tqdm
