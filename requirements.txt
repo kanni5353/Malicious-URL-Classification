@@ -1,18 +1,20 @@
-# ML and data processing
+# Core ML and data processing
 scikit-learn
 lightgbm
-matplotlib
+xgboost
+pandas
 numpy
 scipy
-pandas
-seaborn
 
-# Logging and progress
+# Feature engineering and model enhancement
+imblearn
+
+# Visualization and logging
+matplotlib
 tqdm
 
 # Test coverage
 coverage
 
-# Only if using MongoDB
+# Optional: for MongoDB sync
 pymongo
-
