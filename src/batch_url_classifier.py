@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.datasets import load_svmlight_file
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -10,7 +11,6 @@ from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.svm import LinearSVC
 import lightgbm as lgb
-import xgboost as xgb
 from imblearn.over_sampling import SMOTE
 from datetime import datetime
 import os
@@ -20,7 +20,7 @@ from sklearn.linear_model import RidgeClassifier, PassiveAggressiveClassifier
 from sklearn.naive_bayes import MultinomialNB
 from google.colab import files
 import traceback
-import gc  # Make sure gc is imported
+import gc   # Make sure gc is imported
 
 
 class BatchURLClassifier:
