@@ -4,6 +4,7 @@ lightgbm
 pandas
 numpy
 scipy
+seaborn
 
 # Feature engineering and model enhancement
 imblearn
