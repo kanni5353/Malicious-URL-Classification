@@ -1,6 +1,52 @@
+# Python cache
 __pycache__/
-*.pkl
-*.png
-batch_results.png
-data/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
 venv/
+.env/
+
+# Datasets (too large or generated)
+data/
+*.svm
+*.pkl
+*.csv
+
+# Plot/output files
+*.png
+*.jpg
+*.jpeg
+batch_results.png
+
+# IDE and editor junk
+*.swp
+*.swo
+.DS_Store
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Coverage and test reports
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.tox/
+.nox/
+.cache/
+
+# Sonar
+.sonar/
+sonar-report.json
+sonar-scanner.log
+
+# Logs
+*.log
+
+# Temporary or generated
+temp_results/
+*.tmp
