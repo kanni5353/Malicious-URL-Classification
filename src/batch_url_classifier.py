@@ -253,8 +253,8 @@ class BatchURLClassifier:
           plt.show()
 def run_classification():
     try:
-        # Initialize classifier with batch size of 5
-        classifier = BatchURLClassifier(data_dir="url_svmlight", batch_size=30)
+        # Initialize classifier with batch size of 2 for tests.... use 30 when performing on 120 data sets
+        classifier = BatchURLClassifier(data_dir="url_svmlight", batch_size=2)
 
         # Process all batches
         print(f"Starting URL Classification")
