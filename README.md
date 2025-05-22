@@ -12,5 +12,6 @@ This project classifies URLs as malicious or benign using batch-trained machine 
 
 ## Run It
 ```bash
+!pip install scikit-learn numpy pandas matplotlib seaborn lightgbm xgboost imbalanced-learn tqdm
 pip install -r requirements.txt
 python src/batch_url_classifier.py
