@@ -1,7 +1,17 @@
+# ML and data processing
 scikit-learn
 lightgbm
 matplotlib
 numpy
 scipy
+pandas
+
+# Logging and progress
 tqdm
+
+# Test coverage
 coverage
+
+# Only if using MongoDB
+pymongo
+
