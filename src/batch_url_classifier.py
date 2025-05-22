@@ -38,7 +38,7 @@ class BatchURLClassifier:
         if self.max_features is None:
             max_dim = 0
             print("Scanning dataset for maximum feature dimension...")
-            for day in tqdm(range(121)):
+            for day in tqdm(range(6)): #121 for full dataset
                 try:
                     X, _ = self.load_day_data(day)
                     max_dim = max(max_dim, X.shape[1])
@@ -185,7 +185,7 @@ class BatchURLClassifier:
             return None
 
     def process_all_batches(self):
-        total_days = 121
+        total_days = 6 #121 for full data set
         total_start_time = datetime.now()
         print(f"\nStarting processing of all batches")
         print(f"Total days: {total_days}")
