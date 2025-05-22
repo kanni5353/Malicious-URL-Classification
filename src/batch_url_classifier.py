@@ -51,7 +51,7 @@ class BatchURLClassifier:
         return self.max_features
 
     def load_day_data(self, day_number):
-        file_path = os.path.join(self.data_dir, f"Day{day_number}.svm")
+        file_path = os.path.join(self.data_dir, f"Day{day_number}_mini.svm")
         try:
             X, y = load_svmlight_file(file_path)
             return X, y
