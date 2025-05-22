@@ -1,7 +1,6 @@
 # Core ML and data processing
 scikit-learn
 lightgbm
-xgboost
 pandas
 numpy
 scipy
