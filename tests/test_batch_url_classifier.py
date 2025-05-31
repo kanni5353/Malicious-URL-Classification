@@ -2,13 +2,13 @@ import unittest
 import os
 import numpy as np
 from scipy.sparse import csr_matrix
-from src.batch_url_classifier import BatchURLClassifier  # adjust this import if needed
+from batch_url_classifier import BatchURLClassifier  # Adjust this import path as needed
 
 class TestBatchURLClassifier(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.mini_data_dir = "data"  # unzip if needed to 'data'
+        cls.mini_data_dir = "url_svmlight"  # Directory with Day*_mini.svm files
         cls.classifier = BatchURLClassifier(data_dir=cls.mini_data_dir, batch_size=2)
 
     def test_max_features_positive_int(self):
@@ -55,6 +55,31 @@ class TestBatchURLClassifier(unittest.TestCase):
         results = self.classifier.process_all_batches()
         self.assertTrue(results)
         self.assertGreaterEqual(len(results), 1)
+
+    def test_plot_batch_results_runs(self):
+        """Test plot generation doesn't crash with minimal batch results."""
+        self.classifier.batch_results = [
+            {
+                'batch_start': 0,
+                'batch_end': 1,
+                'results': {
+                    'Logistic Regression': {
+                        'test_accuracy': 0.9,
+                        'test_precision': 0.91,
+                        'test_recall': 0.89,
+                        'test_f1': 0.9,
+                        'overfit_gap': 0.02,
+                        'roc_auc': 0.95,
+                        'training_time': 0.5,
+                        'confusion_matrix': np.array([[85, 15], [10, 90]])
+                    }
+                }
+            }
+        ]
+        try:
+            self.classifier.plot_batch_results()  # Just ensure it runs without error
+        except Exception as e:
+            self.fail(f"Plotting failed with error: {e}")
 
 if __name__ == '__main__':
     unittest.main()
