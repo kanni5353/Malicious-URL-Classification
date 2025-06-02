@@ -19,7 +19,7 @@ from datetime import datetime
 
 
 class BatchURLClassifier:
-    def __init__(self, data_dir="url_svmlight", batch_size=30, feature_selection='chi2', k_best=300):
+    def __init__(self, data_dir="url_svmlight", batch_size=30,feature_selection,k_best=300):
         self.data_dir = data_dir
         self.batch_size = batch_size
         self.models = {}
@@ -221,4 +221,5 @@ def run_classification():
         traceback.print_exc()
 
 
-run_classification()
+if __name__ == "__main__":
+    run_classification()
