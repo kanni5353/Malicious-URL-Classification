@@ -2,7 +2,7 @@ import unittest
 import os
 import numpy as np
 from scipy.sparse import csr_matrix
-from batch_url_classifier import BatchURLClassifier  # Adjust this import path as needed
+from src.batch_url_classifier import BatchURLClassifier  # Adjust this import path as needed
 
 class TestBatchURLClassifier(unittest.TestCase):
 
