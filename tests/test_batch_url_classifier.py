@@ -8,7 +8,7 @@ class TestBatchURLClassifier(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.mini_data_dir = "url_svmlight"  # Directory with Day*_mini.svm files
+        cls.mini_data_dir = "data"  # Directory with Day*_mini.svm files
         cls.classifier = BatchURLClassifier(data_dir=cls.mini_data_dir, batch_size=2)
 
     def test_max_features_positive_int(self):
