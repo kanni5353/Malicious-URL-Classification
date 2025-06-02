@@ -198,7 +198,7 @@ class BatchURLClassifier:
 def run_classification():
     try:
         classifier = BatchURLClassifier(
-            data_dir="url_svmlight",
+            data_dir="data",
             batch_size=2,
             feature_selection='l1',
             k_best=300
