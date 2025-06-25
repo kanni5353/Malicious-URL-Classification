@@ -6,7 +6,7 @@ This project helps classify URLs as **malicious** or **benign** using machine le
 
 ## What This Project Does
 
-- Loads URL data from SVM-light format files
+- Loads URL data from SVM-light format files.
 - Prepares batches of data (like Day0, Day1, etc.)
 - Trains different ML models like Logistic Regression, SVM, and LightGBM
 - Evaluates how each model performs on accuracy, F1-score, and more
