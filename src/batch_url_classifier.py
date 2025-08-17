@@ -62,13 +62,12 @@ class BatchURLClassifier:
         return X
 
     def apply_feature_selection(self, X_train, y_train, X_test):
-        if self.feature_selection == 'chi2':
-            X_train = X_train.tocsc()
-            X_test = X_test.tocsc()
-            selector = SelectKBest(score_func=chi2, k=self.k_best)
-            X_train = selector.fit_transform(X_train, y_train)
-            X_test = selector.transform(X_test)
-        elif self.feature_selection == 'l1':
+        print("🧹 Applying VarianceThreshold to remove near-zero variance features...")
+        vt = VarianceThreshold(threshold=1e-5)
+        X_train = vt.fit_transform(X_train)
+        X_test = vt.transform(X_test)
+        print(f"🔢 Features after VarianceThreshold: {X_train.shape[1]}")
+        if self.feature_selection == 'l1':
             selector = SelectFromModel(LogisticRegression(penalty='l1', solver='liblinear', max_iter=1000), max_features=self.k_best)
             X_train = selector.fit_transform(X_train, y_train)
             X_test = selector.transform(X_test)
